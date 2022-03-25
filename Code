@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+
+
+
+int main(){
+    /*\n;||(or) e &&(and)*/
+    int hp[2];
+    int golpes[2] = {0,0};
+    //hp[0] = hp do ryu e hp[1] = hp do ken
+    for(int i = 0;i < 2;i++){
+        scanf("%d",&hp[i]);
+    }
+    while(hp[0] != 0 || hp[1] != 0){
+        int dano;
+        scanf("%d",&dano);
+        if(dano > 0){
+            //golpe do ryu
+            hp[1] -= dano;
+            if(hp[1] < 0){
+                hp[1] = 0;
+            }
+            printf("RYU APLICOU UM GOLPE: %d\n",dano);
+            printf("HP RYU = %d\n",hp[0]);
+            printf("HP KEN = %d\n",hp[1]);
+            golpes[0]++;
+        }
+        if(dano < 0){
+            //golpe do ken
+            hp[0] += dano;
+            if(hp[0] < 0){
+                hp[0] = 0;
+            }
+            printf("KEN APLICOU UM GOLPE: %d\n",(-1)*dano);
+            printf("HP RYU = %d\n",hp[0]);
+            printf("HP KEN = %d\n",hp[1]);
+            golpes[1]++;
+        }
+        if(hp[0] == 0){
+            printf("LUTADOR VENCEDOR: KEN\n");
+            printf("GOLPES RYU = %d\n",golpes[0]);
+            printf("GOLPES KEN = %d\n",golpes[1]);
+        }
+        if(hp[1] == 0){
+           printf("LUTADOR VENCEDOR: RYU\n");
+           printf("GOLPES RYU = %d\n",golpes[0]);
+           printf("GOLPES KEN = %d\n",golpes[1]);
+        }
+    }
+
+
+
+
+  return 0;
+
+}
