@@ -43,11 +43,13 @@ int main(){
             printf("LUTADOR VENCEDOR: KEN\n");
             printf("GOLPES RYU = %d\n",golpes[0]);
             printf("GOLPES KEN = %d\n",golpes[1]);
+            break;
         }
         if(hp[1] == 0){
            printf("LUTADOR VENCEDOR: RYU\n");
            printf("GOLPES RYU = %d\n",golpes[0]);
            printf("GOLPES KEN = %d\n",golpes[1]);
+           break;
         }
     }
 
